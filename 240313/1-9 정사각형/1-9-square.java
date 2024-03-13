@@ -13,7 +13,7 @@ public class Main {
                 cnt++;
 
                 if (cnt == 10) {
-                    cnt -= 9;
+                    cnt = 1;
                 }
             }
 
