@@ -19,7 +19,7 @@ public class Main {
             cnt++;
         }
 
-        double avg = sum / cnt;
+        double avg = (double)sum / cnt;
 
         System.out.printf("%d %.1f", sum, avg);
     }
