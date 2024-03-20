@@ -8,13 +8,12 @@ public class Main {
         int[] count = new int[10];
 
         while(true) {
+            count[a % b]++;
+            a = a / b;
+
             if (a <= 1) {
                 break;
             }
-
-            a = a / b;
-
-            count[a % b]++;
         }
 
         int sum = 0;
