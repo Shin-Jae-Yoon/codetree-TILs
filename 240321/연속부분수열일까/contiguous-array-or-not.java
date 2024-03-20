@@ -17,21 +17,27 @@ public class Main {
             n2Arr[i] = sc.nextInt();
         }
 
-        int cnt = 0;
+        for (int i = 1; i <= n1; i++) {
+            boolean success = true;
 
-        for (int i = 1; i <= n2; i++) {
-            for (int j = 1; j <= n1; j++) {
-                if (n1Arr[j] == n2Arr[i]) {
-                    cnt++;
+            for (int j = 1; j <= n2; j++) {
+                if (i + j >= n1) {
+                    success = false;
+                    break;
+                }
+
+                if (n1Arr[i + j] != n2Arr[j]) {
+                    success = false;
                     break;
                 }
             }
+
+            if (success) {
+                System.out.print("Yes");
+                System.exit(0);
+            }
         }
 
-        if (cnt == n2) {
-            System.out.print("Yes");
-        } else {
-            System.out.print("No");
-        }
+        System.out.print("No");
     }
 }
