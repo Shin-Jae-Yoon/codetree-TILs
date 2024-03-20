@@ -15,37 +15,35 @@ public class Main {
         // 질의 입력 + 처리후 출력
         // 1 a, 2 a, 3 a b 3가지 경우
         for (int i = 1; i <= q; i++) {
-            int first = sc.nextInt();
-            
-            if (first == 3) {
+            int qType = sc.nextInt();
+
+            if (qType == 1) {
+                int a = sc.nextInt();
+                
+                System.out.print(nArr[a]);
+            }
+
+            else if (qType == 2) {
+                int a = sc.nextInt();
+                int idx = 0;
+
+                for (int j = 1; j <= n; j++) {
+                    if (nArr[j] == a) {
+                        idx = j;
+                        break;
+                    }
+                }
+
+                System.out.print(idx);
+            }
+
+            else {
                 int a = sc.nextInt();
                 int b = sc.nextInt();
 
                 for (int j = a; j <= b; j++) {
                     System.out.print(nArr[j] + " ");
                 }
-
-            } else {
-                int c = sc.nextInt();
-
-                if (first == 1) {
-                    System.out.print(nArr[c]);
-                } else {
-                    int cnt = 0;
-
-                    for (int j = 1; j <= n; j++) {
-                        if (nArr[j] == c) {
-                            System.out.print(j);
-                            cnt++;
-                            break;
-                        }
-                    }
-
-                    if (cnt == 0) {
-                        System.out.print(0);
-                    }
-                }
-
             }
 
             System.out.println();
