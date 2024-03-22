@@ -1,25 +1,22 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] input = new int[n + 1];
+        int[] input = new int[n];
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             input[i] = sc.nextInt();
         }
 
-        for (int i = 1; i < n; i++) {
-            for (int j = i; j <= n; j++) {
-                if (input[i] < input[j]) {
-                    int temp = input[i];
-                    input[i] = input[j];
-                    input[j] = temp;
-                }
-            }
-        }
+        Integer[] result = Arrays.stream(input)
+                                .boxed()
+                                .toArray(Integer[]::new);
+        Arrays.sort(result, Collections.reverseOrder());
 
-        System.out.print(input[1] + " " + input[2]);
+        System.out.print(result[0] + " " + result[1]);
     }
 }
