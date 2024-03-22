@@ -11,7 +11,7 @@ public class Main {
         }
 
         for (int i = 1; i < n; i++) {
-            for (int j = i; j < n; j++) {
+            for (int j = i; j <= n; j++) {
                 if (input[i] < input[j]) {
                     int temp = input[i];
                     input[i] = input[j];
