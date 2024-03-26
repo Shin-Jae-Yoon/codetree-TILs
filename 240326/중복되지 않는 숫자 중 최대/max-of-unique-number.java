@@ -14,7 +14,7 @@ public class Main {
         int maxVal = Integer.MIN_VALUE;
 
         for (int i = 1; i < countArr.length; i++) {
-            if (maxVal <= countArr[i] && countArr[i] == 1) {
+            if (maxVal <= i && countArr[i] == 1) {
                 maxVal = i;
             }
         }
