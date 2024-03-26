@@ -7,7 +7,8 @@ public class Main {
         int[] countArr = new int[1001];
 
         for (int i = 1; i <= n; i++) {
-            countArr[i]++;
+            int num = sc.nextInt();
+            countArr[num]++;
         }
 
         int maxVal = Integer.MIN_VALUE;
