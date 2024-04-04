@@ -8,25 +8,15 @@ public class Main {
         int cnt = 1;
 
         for (int col = n - 1; col >= 0; col--) {
-            if (n % 2 == 0) {
-                if (col % 2 == 1) {
-                    for (int row = n - 1; row >= 0; row--) {
-                        result[row][col] = cnt++;
-                    }
-                } else {
-                    for (int row = 0; row < n; row++) {
-                        result[row][col] = cnt++;
-                    }
+            if ((n - 1 - col) % 2 == 0) {
+                for (int row = n - 1; row >= 0; row--) {
+                    result[row][col] = cnt;
+                    cnt++;
                 }
             } else {
-                if (col % 2 == 0) {
-                    for (int row = n - 1; row >= 0; row--) {
-                        result[row][col] = cnt++;
-                    }
-                } else {
-                    for (int row = 0; row < n; row++) {
-                        result[row][col] = cnt++;
-                    }
+                for (int row = 0; row < n; row++) {
+                    result[row][col] = cnt;
+                    cnt++;
                 }
             }
         }
