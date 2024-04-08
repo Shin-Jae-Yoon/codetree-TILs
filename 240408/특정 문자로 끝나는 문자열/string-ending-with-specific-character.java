@@ -10,13 +10,19 @@ public class Main {
         }
 
         char alphabet = sc.next().charAt(0);
+        boolean state = false;
 
         for (int i = 0; i < 10; i++) {
             int index = str[i].length() - 1;
 
             if (str[i].charAt(index) == alphabet) {
                 System.out.println(str[i]);
+                state = true;
             }
+        }
+
+        if (state == false) {
+            System.out.println("None");
         }
     }
 }
