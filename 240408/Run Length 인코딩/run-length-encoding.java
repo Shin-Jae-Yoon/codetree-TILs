@@ -5,23 +5,26 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
 
-        int cnt = 1;
-        String result = "";
+        String encoded = "";
+        char currentChar = str.charAt(0);
+        int currentNum = 1;
 
-        for (int i = 0; i < str.length() - 1; i++) {
-            if (str.charAt(i) == str.charAt(i + 1)) {
-                cnt++;
-            }
-
-            if (str.charAt(i) != str.charAt(i + 1)) {
-                result = result + str.charAt(i) + cnt;
-                cnt = 1;
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) == currentChar) {
+                currentNum++;
+            } else {
+                encoded += currentChar;
+                encoded += Integer.toString(currentNum);
+                
+                currentChar = str.charAt(i);
+                currentNum = 1;
             }
         }
 
-        result = result + str.charAt(str.length() - 1) + cnt;
+        encoded += currentChar;
+        encoded += Integer.toString(currentNum);
 
-        System.out.println(result.length());
-        System.out.println(result);
+        System.out.println(encoded.length());
+        System.out.println(encoded);
     }
 }
