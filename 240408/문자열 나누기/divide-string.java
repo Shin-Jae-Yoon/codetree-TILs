@@ -11,16 +11,10 @@ public class Main {
             str += sc.next();
         }
 
-        int cnt = 1;
-
         for (int i = 0; i < str.length(); i++) {
-            if (cnt <= 5) {
-                System.out.print(str.charAt(i));
-                cnt++;
-            }
+            System.out.print(str.charAt(i));
 
-            if (cnt == 6) {
-                cnt = 1;
+            if ((i + 1) % 5 == 0) {
                 System.out.println();
             }
         }
