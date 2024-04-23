@@ -23,9 +23,7 @@ public class Main {
             }
 
             if (number == 3) {
-                for (int j = len - 1; j >= 0; j--) {
-                    sb.append(str.charAt(j));
-                }
+                sb.append(str.substring(0)).reverse();
             }
 
             str = sb.toString();
