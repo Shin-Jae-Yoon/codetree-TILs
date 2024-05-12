@@ -11,7 +11,7 @@ public class Main {
                 result += (char)(input.charAt(i) - 'A' + 'a');
             } else if ('a' <= input.charAt(i) && input.charAt(i) <= 'z') {
                 result += input.charAt(i);
-            } else if ('1' <= input.charAt(i) && input.charAt(i) <= '9') {
+            } else if ('0' <= input.charAt(i) && input.charAt(i) <= '9') {
                 result += input.charAt(i);
             }
         }
