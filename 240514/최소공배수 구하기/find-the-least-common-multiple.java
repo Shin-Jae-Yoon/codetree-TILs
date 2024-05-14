@@ -6,11 +6,10 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int gcd = findGcd(n, m);
-        lcm(n, m, gcd);
+        findLCM(n, m);
     }
 
-    private static int findGcd(int n, int m) {
+    private static void findLCM(int n, int m) {
         int gcd = 0;
 
         for (int i = 1; i <= Math.min(n, m); i++) {
@@ -19,12 +18,6 @@ public class Main {
             }
         }
 
-        return gcd;
-    }
-
-    private static void lcm(int n, int m, int gcd) {
-        int first = n / gcd;
-
-        System.out.print(m * first);
+        System.out.println(n * m / gcd);
     }
 }
