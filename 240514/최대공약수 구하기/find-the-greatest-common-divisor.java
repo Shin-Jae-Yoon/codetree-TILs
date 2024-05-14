@@ -12,7 +12,7 @@ public class Main {
     private static void gcd(int n, int m) {
         int max = 1;
 
-        for (int i = 2; i <= 100; i++) {
+        for (int i = 2; i <= Math.min(n, m); i++) {
             if (n % i == 0 && m % i == 0) {
                 max = i;
             }
