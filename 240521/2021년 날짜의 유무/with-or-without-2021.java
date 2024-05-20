@@ -8,56 +8,30 @@ public class Main {
         m = sc.nextInt();
         d = sc.nextInt();
 
-        if (isExist()) {
+        if (judgeDay()) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
         }
     }
 
-    private static boolean isExist() {
-        if (isFebruary()) {
-            return true;
-        }
-
-        if (isThirtyMonth()) {
-            return true;
-        }
-
-        if (isThirtyOneMonth()) {
+    private static boolean judgeDay() {
+        if (m <= 12 && d <= lastDayNumber()) {
             return true;
         }
 
         return false;
     }
 
-    private static boolean isFebruary() {
+    private static int lastDayNumber() {
         if (m == 2) {
-            if (d >= 1 && d <= 28) {
-                return true;
-            }
+            return 28;
         }
 
-        return false;
-    }
-
-    private static boolean isThirtyMonth() {
         if (m == 4 || m == 6 || m == 9 || m == 11) {
-            if (d >= 1 && d <= 30) {
-                return true;
-            }
+            return 30;
         }
 
-        return false;
-    }
-
-    private static boolean isThirtyOneMonth() {
-        if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) {
-            if (d >= 1 && d <= 31) {
-                return true;
-            }
-        }
-
-        return false;
+        return 31;
     }
 }
