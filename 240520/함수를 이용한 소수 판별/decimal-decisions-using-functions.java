@@ -9,7 +9,7 @@ public class Main {
         int sum = 0;
 
         for (int n = a; n <= b; n++) {
-            if (isPrime(n) && n != 1) {
+            if (isPrime(n)) {
                 sum += n;
             }
         }
@@ -18,6 +18,10 @@ public class Main {
     }
 
     private static boolean isPrime(int n) {
+        if (n == 1) {
+            return false;
+        }
+        
         for (int i = 2; i < n; i++) {
             if (n % i == 0) {
                 return false;
