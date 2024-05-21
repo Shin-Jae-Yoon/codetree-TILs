@@ -13,19 +13,12 @@ public class Main {
     }
 
     private static boolean isPalindrome(String str) {
-        int len = str.length();
-        char[] tempArr = new char[len];
-
-        for (int i = 0; i < tempArr.length; i++) {
-            tempArr[i] = str.charAt(len - 1 - i);
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+                return false;
+            }
         }
 
-        String temp = String.valueOf(tempArr);
-
-        if (str.equals(temp)) {
-            return true;
-        }
-
-        return false;
+        return true;
     }
 }
