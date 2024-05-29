@@ -14,13 +14,11 @@ public class Main {
         }
 
         if (n % 2 == 0) {
-            cnt++;
-            return recursion(n / 2) + 1;
+            return countNumber(n / 2) + 1;
         }
 
         if (n % 2 == 1) {
-            cnt++;
-            return recursion(n * 3 + 1) + 1;
+            return countNumber(n * 3 + 1) + 1;
         }
 
         return 0;
