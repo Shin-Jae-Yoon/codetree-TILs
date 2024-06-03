@@ -1,31 +1,38 @@
 import java.util.Scanner;
 
 public class Main {
+    private static final int MAX_N = 10;
+
+    private static int[] arr = new int[MAX_N + 1];
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] input = new int[n];
 
-        for (int i = 0; i < n; i++) {
-            input[i] = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            arr[i] = sc.nextInt();
         }
 
-        System.out.print(lcm(input, n - 1, 1));
+        System.out.print(getLCMAll(n));
     }
 
-    private static int lcm(int[] a, int n, int c) {
-        if (n < 0) {
-            return 1;
+    private static int getLCMAll(int index) {
+        if (index == 1) {
+            return arr[1];
         }
 
-        int i = 1;
+        return lcm(getLCMAll(index - 1), arr[index]);
+    }
 
-        for (i = 1; i <= a[n]; i++) {
-            if ((c * i) % a[n] == 0) {
-                break;
+    private static int lcm(int a, int b) {
+        int gcd = 1;
+
+        for (int i = 1; i <= Math.min(a, b); i++) {
+            if (a % i == 0 && b % i == 0) {
+                gcd = i;
             }
         }
 
-        return lcm(a, n - 1, c * i) * i;
+        return a * b / gcd;
     }
 }
