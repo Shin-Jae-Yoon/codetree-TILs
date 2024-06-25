@@ -21,6 +21,10 @@ public class Main {
         List<String> list = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
+            if (candidate[i].length() < tLength) {
+                continue;
+            }
+
             if (candidate[i].substring(0, tLength).equals(t)) {
                 list.add(candidate[i]);
             }
