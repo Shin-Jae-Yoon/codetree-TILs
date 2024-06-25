@@ -20,8 +20,8 @@ public class Main {
             arr2[i] = sc.nextInt();
         }
 
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
+        Arrays.sort(arr1, 0, n);
+        Arrays.sort(arr2, 0, n);
 
         if (equal()) {
             System.out.println("Yes");
