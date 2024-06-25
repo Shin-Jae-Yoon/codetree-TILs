@@ -16,12 +16,6 @@ public class Main {
         int max = 0;
 
         for (int i = 0; i < n; i++) {
-            int lastIndex = 2 * n - 1;
-
-            if (input[i] == input[i + 1] || input[lastIndex - 1 - i] == input[lastIndex - i]) {
-                continue;
-            }
-
             int candidate = input[i] + input[2 * n - 1 - i];
 
             if (candidate >= max) {
