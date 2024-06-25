@@ -22,9 +22,10 @@ public class Main {
                 continue;
             }
 
-            if (max == 0) {
-                max = input[i] + input[2 * n - 1 - i];
-                break;
+            int candidate = input[i] + input[2 * n - 1 - i];
+
+            if (candidate >= max) {
+                max = candidate;
             }
         }
 
