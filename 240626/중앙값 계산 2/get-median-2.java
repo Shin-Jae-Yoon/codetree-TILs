@@ -15,26 +15,9 @@ public class Main {
             input[i] = sc.nextInt();
         }
 
-        List<Integer> list = new ArrayList<>();
-
         for (int i = 0; i < n; i = i + 2) {
-            list.add(determineMedium(i));
+            Arrays.sort(input, 0, i + 1);
+            System.out.print(input[i / 2] + " ");
         }
-
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + " ");
-        }
-    }
-
-    private static int determineMedium(int number) {
-        int[] temp = new int[number + 1];
-
-        for (int i = 0; i < number + 1; i++) {
-            temp[i] = input[i];
-        }
-
-        Arrays.sort(temp);
-
-        return temp[number / 2];
     }
 }
