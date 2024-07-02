@@ -19,10 +19,13 @@ public class Main {
 }
 
 class User {
-    String id = "codetree";
-    int level = 10;
+    String id;
+    int level;
 
-    public User() {};
+    public User() {
+        this.id = "codetree";
+        this.level = 10;
+    }
 
     public User(String id, int level) {
         this.id = id;
