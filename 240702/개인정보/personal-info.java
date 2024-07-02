@@ -32,7 +32,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             sb.append(persons[i].name + " ")
                 .append(persons[i].height + " ")
-                .append(persons[i].weight + " ")
+                .append(String.format("%.1f", persons[i].weight) + " ")
                 .append("\n");
         }
 
@@ -52,7 +52,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             sb.append(persons[i].name + " ")
                 .append(persons[i].height + " ")
-                .append(persons[i].weight + " ")
+                .append(String.format("%.1f", persons[i].weight) + " ")
                 .append("\n");
         }
 
