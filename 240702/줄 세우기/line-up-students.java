@@ -15,18 +15,8 @@ public class Main {
             students[i] = new Student(w, h, i + 1);
         }
 
-        Arrays.sort(students, (a, b) -> {
-            if (a.height != b.height) {
-                return b.height - a.height;
-            }
-
-            if (a.weight != b.weight) {
-                return b.weight - a.weight;
-            }
-
-            return a.number - b.number;
-        });
-
+        Arrays.sort(students);
+        
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < n; i++) {
@@ -40,7 +30,7 @@ public class Main {
     }
 }
 
-class Student {
+class Student implements Comparable<Student> {
     int height;
     int weight;
     int number;
@@ -49,5 +39,18 @@ class Student {
         this.height = height;
         this.weight = weight;
         this.number = number;
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        if (this.height != student.height) {
+            return student.height - this.height;
+        }
+
+        if (this.weight != student.weight) {
+            return student.weight - this.weight;
+        }
+
+        return this.number - student.number;
     }
 }
