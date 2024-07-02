@@ -14,8 +14,8 @@ public class Main {
 
         int minIndex = 0;
 
-        for (int i = 0; i < 4; i++) {
-            if (spys[minIndex].score >= spys[i + 1].score) {
+        for (int i = 0; i < 5; i++) {
+            if (spys[minIndex].score >= spys[i].score) {
                 minIndex = i;
             }
         }
