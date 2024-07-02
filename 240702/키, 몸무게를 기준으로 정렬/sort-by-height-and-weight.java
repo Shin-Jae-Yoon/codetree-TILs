@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.lang.StringBuilder;
 
 public class Main {
@@ -18,16 +17,7 @@ public class Main {
             persons[i] = new Person(name, height, weight);
         }
 
-        Arrays.sort(persons, new Comparator<Person>() {
-            @Override
-            public int compare(Person a, Person b) {
-                if (a.height != b.height) {
-                    return a.height - b.height;
-                }
-
-                return b.weight - a. weight;
-            }
-        });
+        Arrays.sort(persons);
 
         StringBuilder sb = new StringBuilder();
         
@@ -41,7 +31,7 @@ public class Main {
     }
 }
 
-class Person {
+class Person implements Comparable<Person> {
     String name;
     int height;
     int weight;
@@ -50,5 +40,14 @@ class Person {
         this.name = name;
         this.height = height;
         this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Person person) {
+        if (this.height != person.height) {
+            return this.height - person.height;
+        }
+
+        return person.weight - this.weight;
     }
 }
