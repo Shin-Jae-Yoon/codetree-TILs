@@ -41,6 +41,10 @@ class Sequence implements Comparable<Sequence> {
 
     @Override
     public int compareTo(Sequence sequence) {
-        return this.number - sequence.number;
+        if (this.number != sequence.number) {
+            return this.number - sequence.number;
+        }
+        
+        return this.index - sequence.index;
     }
 }
