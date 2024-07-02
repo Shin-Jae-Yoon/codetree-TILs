@@ -1,6 +1,4 @@
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,26 +15,17 @@ public class Main {
             weatherDatas[i] = new WeatherData(date, day, weather);
         }
 
-        List<WeatherData> list = new ArrayList<>();
+        WeatherData result = new WeatherData("9999-99-99", "", "");
 
         for (int i = 0; i < n; i++) {
             if (weatherDatas[i].weather.equals("Rain")) {
-                list.add(weatherDatas[i]);
+                if (result.date.compareTo(weatherDatas[i].date) > 0) {
+                    result = weatherDatas[i];
+                }
             }
         }
 
-        int lastIndex = 0;
-
-        for (int i = 1; i < list.size(); i++) {
-            int prevDate = Integer.parseInt(list.get(lastIndex).date.replaceAll("-", ""));
-            int nextDate = Integer.parseInt(list.get(i).date.replaceAll("-", ""));
-
-            if (prevDate >= nextDate) {
-                lastIndex = i;
-            }
-        }
-
-        System.out.println(list.get(lastIndex).date + " " + list.get(lastIndex).day + " " + list.get(lastIndex).weather);
+        System.out.println(result.date + " " + result.day + " " + result.weather);
     }
 }
 
