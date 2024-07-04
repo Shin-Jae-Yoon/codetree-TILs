@@ -12,7 +12,7 @@ public class Main {
             char direction = sc.next().charAt(0);
 
             if (direction == 'R') {
-                for (int j = current; j < current + x; j++) {
+                for (int j = current + 1; j <= current + x; j++) {
                     checked[j]++;
                 }
 
