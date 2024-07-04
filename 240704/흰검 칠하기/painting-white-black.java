@@ -16,24 +16,20 @@ public class Main {
             int x = sc.nextInt();
             char direction = sc.next().charAt(0);
 
-            // 검은색 1
             if (direction == 'R') {
                 for (int j = current; j < current + x; j++) {
                     checked[j] = 1;
                     countBlack[j]++;
                 }
-
-                current = current + x;
+                current = current + x - 1;
             }   
 
-            // 흰색 2
             if (direction == 'L') {
-                for (int j = current - 1; j >= current - x; j--) {
+                for (int j = current; j > current - x; j--) {
                     checked[j] = 2;
                     countWhite[j]++;
                 }
-
-                current = current - x;
+                current = current - x + 1;
             }
         }
 
@@ -41,7 +37,7 @@ public class Main {
         int black = 0;
         int gray = 0;
 
-        for (int i = 1; i <= 2 * MAX_K; i++) {
+        for (int i = 0; i <= 2 * MAX_K; i++) {
             if (countBlack[i] >= 2 && countWhite[i] >= 2) {
                 gray++;
             }
