@@ -10,8 +10,8 @@ public class Main {
         int n = sc.nextInt();
 
         for (int i = 1; i <= n; i++) {
-            int x1 = sc.nextInt();
-            int x2 = sc.nextInt();
+            int x1 = sc.nextInt() + 100;
+            int x2 = sc.nextInt() + 100;
 
             for (int j = x1; j < x2; j++) {
                 checked[j]++;
@@ -20,7 +20,7 @@ public class Main {
 
         int max = 0;
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= MAX_SIZE; i++) {
             if (max <= checked[i]) {
                 max = checked[i];
             }
