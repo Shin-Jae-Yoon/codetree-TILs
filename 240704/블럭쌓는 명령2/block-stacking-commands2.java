@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int k = sc.nextInt();
-        int[] blocked = new int[n];
+        int[] blocked = new int[n + 1];
 
         for (int i = 0; i < k; i++) {
             int a = sc.nextInt();
