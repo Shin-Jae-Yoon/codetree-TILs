@@ -9,8 +9,16 @@ public class Main {
         int d2 = sc.nextInt();
         String targetDay = sc.next();
 
-        int diff = numOfDays(m2, d2) - numOfDays(m1, d1);
-        int count = diff / 7 + 1;
+        int diff = numOfDays(m2, d2) - numOfDays(m1, d1) + 1;
+        int count = diff / 7;
+
+        String[] daysOfTheWeek = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+
+        for (int i = 0; i < diff % 7; i++) {
+            if (daysOfTheWeek[i].equals(targetDay)) {
+                count++;
+            }
+        }
 
         System.out.println(count);
     }
