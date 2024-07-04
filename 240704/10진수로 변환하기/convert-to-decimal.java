@@ -1,15 +1,19 @@
 import java.util.Scanner;
+import java.lang.StringBuilder;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String binary = sc.next();
+        String input = sc.next();
+        int sum = 0;
 
-        int num = 0;
-        for (int i = 0; i < binary.length(); i++) {
-            num = num * 2 + (binary.charAt(i) - '0');
+        StringBuilder reversed = new StringBuilder(input).reverse();
+
+        for (int i = 0; i < reversed.length(); i++) {
+            int num = reversed.charAt(i) - '0';
+            sum += num * Math.pow(2, i);
         }
 
-        System.out.print(num);
+        System.out.println(sum);
     }
 }
