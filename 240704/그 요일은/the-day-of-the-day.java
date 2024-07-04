@@ -10,17 +10,9 @@ public class Main {
         String targetDay = sc.next();
 
         int diff = numOfDays(m2, d2) - numOfDays(m1, d1) + 1;
-        int count = diff / 7;
+        int result = calculateDaysOfTheWeek(diff, targetDay);
 
-        String[] daysOfTheWeek = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
-
-        for (int i = 0; i < diff % 7; i++) {
-            if (daysOfTheWeek[i].equals(targetDay)) {
-                count++;
-            }
-        }
-
-        System.out.println(count);
+        System.out.println(result);
     }
 
     private static int numOfDays(int m, int d) {
@@ -35,5 +27,20 @@ public class Main {
         totalDays += d;
 
         return totalDays;
+    }
+
+    private static int calculateDaysOfTheWeek(int diff, String targetDay) {
+        String[] daysOfTheWeek = new String[]{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+
+        int quotient = diff / 7;
+        int remain = diff % 7;
+
+        for (int i = 0; i < remain; i++) {
+            if (daysOfTheWeek[i].equals(targetDay)) {
+                quotient++;
+            }
+        }
+
+        return quotient;
     }
 }
