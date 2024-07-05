@@ -9,8 +9,6 @@ public class Main {
 
         // 기본, 0, 회색
         int[] tiles = new int[2 * MAX_R + 1];
-        int[] blackTiles = new int[2 * MAX_R + 1];
-        int[] whiteTiles = new int[2 * MAX_R + 1];
 
         // 현재 위치 (OFFSET 더한걸로 계산)
         int current = 100000;
@@ -26,12 +24,6 @@ public class Main {
             if (direction == 'R') {
                 for (int j = current; j < current + x; j++) {
                     tiles[j] = 1;
-                    
-                    if (whiteTiles[j] == 1) {
-                        whiteTiles[j] = 0;
-                    }
-
-                    blackTiles[j] = 1;
                 }
 
                 current = current + x - 1;
@@ -41,12 +33,6 @@ public class Main {
             if (direction == 'L') {
                 for (int j = current; j > current - x; j--) {
                     tiles[j] = 2;
-
-                    if (blackTiles[j] == 1) {
-                        blackTiles[j] = 0;
-                    }
-
-                    whiteTiles[j] = 1;
                 }
 
                 current = current - x + 1;
@@ -54,12 +40,10 @@ public class Main {
         }
 
         for (int i = 1; i <= 2 * MAX_R; i++) {
-            if (whiteTiles[i] == 1) {
-                whiteCount++;
-            }
-
-            if (blackTiles[i] == 1) {
+            if (tiles[i] == 1) {
                 blackCount++;
+            } else if (tiles[i] == 2) {
+                whiteCount++;
             }
         }
         
