@@ -27,40 +27,28 @@ public class Main {
         int yMax = 0;
         int xMin = 2 * MAX_R + 1;
         int yMin = 2 * MAX_R + 1;
-        int count = 0;
+        boolean rectExist = false;
 
         for (int x = 0; x < 2 * MAX_R + 1; x++) {
             for (int y = 0; y < 2 * MAX_R + 1; y++) {
                 if (plane[x][y] == 1) {
-                    if (xMax <= x) {
-                        xMax = x + 1;
-                    }
-
-                    if (yMax <= y) {
-                        yMax = y + 1;
-                    }
-
-                    if (xMin >= x) {
-                        xMin = x;
-                    }
-
-                    if (yMin >= y) {
-                        yMin = y;
-                    }
-
-                    count++;
+                    rectExist = true;
+                    xMax = Math.max(xMax, x);
+                    yMax = Math.max(yMax, y);
+                    xMin = Math.min(xMin, x);
+                    yMin = Math.min(yMin, y);
                 }
             }
         }
 
-        if (count == 0) {
-            xMin = 0;
-            yMin = 0;
+        int area = 0;
+
+        if (rectExist) {
+            area = (xMax - xMin + 1) * (yMax - yMin + 1);
+        } else {
+            area = 0;
         }
 
-        int width = xMax - xMin;
-        int height = yMax - yMin;
-
-        System.out.print(width * height);
+        System.out.print(area);
     }
 }
