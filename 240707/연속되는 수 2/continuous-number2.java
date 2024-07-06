@@ -22,7 +22,7 @@ public class Main {
             }
         }
 
-        if (cnt == 1) {
+        if (cnt == 1 && max == 0) {
             max = 1;
         }
 
