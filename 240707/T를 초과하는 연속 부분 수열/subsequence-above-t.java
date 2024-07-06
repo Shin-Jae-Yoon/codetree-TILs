@@ -21,10 +21,6 @@ public class Main {
                 cnt = 0;
             }
 
-            if (i == 0 && arr[0] > t) {
-                cnt++;
-            }
-
             max = Math.max(max, cnt);
         }
 
