@@ -10,7 +10,7 @@ public class Main {
         // 벌칙 횟수 (k번 이상 벌칙에 걸린 학생이 벌금)
         int k = sc.nextInt();
 
-        // 벌칠 걸린 횟수 저장
+        // 벌칙 걸린 횟수 저장
         int[] students = new int[n + 1];
         // 벌칙 걸린 놈들
         int[] selected = new int[m + 1];
