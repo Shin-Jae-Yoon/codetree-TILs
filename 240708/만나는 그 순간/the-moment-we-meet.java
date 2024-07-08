@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static final int MAX_R = 2000;
+    public static final int MAX_R = 1000000;
     public static int[] a = new int[MAX_R + 1];
     public static int[] b = new int[MAX_R + 1];
 
