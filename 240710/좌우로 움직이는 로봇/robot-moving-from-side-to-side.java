@@ -50,14 +50,14 @@ public class Main {
             }
         }
 
-        if (n < m) {
-            for (int i = timeA; i <= timeB; i++) {
+        if (timeA < timeB) {
+            for (int i = timeA; i < timeB; i++) {
                 positionA[i] = positionA[i - 1];
             }
         }
 
-        if (n > m) {
-            for (int i = timeB; i <= timeA; i++) {
+        if (timeA > timeB) {
+            for (int i = timeB; i < timeA; i++) {
                 positionB[i] = positionB[i - 1];
             }
         }
