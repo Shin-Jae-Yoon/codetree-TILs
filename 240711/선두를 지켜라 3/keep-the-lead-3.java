@@ -41,23 +41,25 @@ public class Main {
 
         for (int time = 1; time < timeA; time++) {
             if (positionA[time] > positionB[time]) {
-                if (leader == 2) {
+                if (leader == 2 || leader == 3 || time == 1) {
                     changeCount++;
                 }
 
                 leader = 1;
             }
-            
-            if (positionA[time] < positionB[time]) {
-                if (leader == 1) {
+            else if (positionA[time] < positionB[time]) {
+                if (leader == 1 || leader == 3 || time == 1) {
                     changeCount++;
                 }
 
                 leader = 2;
             }
+            else if (positionA[time] == positionB[time]) {
+                if (leader == 1 || leader == 2 || time == 1) {
+                    changeCount++;
+                }
 
-            if (positionA[time] == positionB[time]) {
-                changeCount++;
+                leader = 3;
             }
         }
 
