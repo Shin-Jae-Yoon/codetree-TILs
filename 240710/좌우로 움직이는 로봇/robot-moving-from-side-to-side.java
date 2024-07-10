@@ -65,7 +65,7 @@ public class Main {
         int result = 0;
         int max = Math.max(timeA, timeB);
 
-        for (int i = 1; i <= max; i++) {
+        for (int i = 1; i < max; i++) {
             if (positionA[i - 1] != positionB[i - 1] && positionA[i] == positionB[i]) {
                 result++;
             }
