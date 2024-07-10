@@ -14,8 +14,8 @@ public class Main {
         int t = sc.nextInt();
         // 전염된 사람끼리 만나도 전염시킨 것으로 간주 O, 재감염은 X
 
-        int[] result = new int[n + 1];
-        result[p] = k + 1;
+        int[] infected = new int[n + 1];
+        infected[p] = k + 1;
 
         // 악수한 정황 (시간 순으로 오름차순)
         HandShake[] handshake = new HandShake[t];
@@ -31,25 +31,28 @@ public class Main {
         Arrays.sort(handshake);
 
         for (int i = 0; i < t; i++) {
-            if (handshake[i].x == p && result[p] > 1) {
+            int x = handshake[i].x;
+            int y = handshake[i].y;
+
+            if (infected[x] > 1) {
                 // x 개발자가 감염자 p라면, y 개발자가 전염됨
-                result[handshake[i].y] = k + 1;
+                infected[y] = k + 1;
                 // x 개발자의 감염 가능 횟수 감소
-                result[p]--;
+                infected[x]--;
             }
 
-            if (handshake[i].y == p && result[p] > 1) {
-                result[handshake[i].x] = k + 1;
-                result[p]--;
+            if (infected[y] > 1) {
+                infected[x] = k + 1;
+                infected[y]--;
             }
         }
 
         for (int i = 1; i <= n; i++) {
-            if (result[i] > 1) {
-                result[i] = 1;
+            if (infected[i] >= 1) {
+                infected[i] = 1;
             }
 
-            System.out.print(result[i]);
+            System.out.print(infected[i]);
         }
     }
 }
