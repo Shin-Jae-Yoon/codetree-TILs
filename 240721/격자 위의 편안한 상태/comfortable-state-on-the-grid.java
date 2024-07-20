@@ -36,21 +36,19 @@ public class Main {
     }
 
     private static int comfortableState(int r, int c) {
-        if (inRange(r, c)) {
-            int count = 0;
+        int count = 0;
 
-            for (int directionNumber = 0; directionNumber < DIRECTION_NUM; directionNumber++) {
-                int nr = r + dr[directionNumber];
-                int nc = c + dc[directionNumber];
+        for (int directionNumber = 0; directionNumber < DIRECTION_NUM; directionNumber++) {
+            int nr = r + dr[directionNumber];
+            int nc = c + dc[directionNumber];
 
-                if (inRange(nr, nc) && matrix[nr][nc] == 1) {
-                    count++;
-                }
+            if (inRange(nr, nc) && matrix[nr][nc] == 1) {
+                count++;
             }
+        }
 
-            if (count == 3) {
-                return 1;
-            }
+        if (count == 3) {
+            return 1;
         }
 
         return 0;
