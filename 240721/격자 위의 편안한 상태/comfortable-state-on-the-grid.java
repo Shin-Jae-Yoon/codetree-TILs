@@ -43,7 +43,7 @@ public class Main {
                 int nr = r + dr[directionNumber];
                 int nc = c + dc[directionNumber];
 
-                if (matrix[nr][nc] == 1) {
+                if (inRange(nr, nc) && matrix[nr][nc] == 1) {
                     count++;
                 }
             }
