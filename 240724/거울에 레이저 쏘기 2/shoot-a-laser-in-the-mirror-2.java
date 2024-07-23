@@ -71,9 +71,7 @@ public class Main {
         while (inRange(x, y)) {
             if (matrix[x][y] == '/') {
                 move(directionNum ^ 1);
-            } 
-            
-            if (matrix[x][y] == '\\') {
+            } else {
                 move(3 - directionNum);
             }
 
