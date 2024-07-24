@@ -31,7 +31,13 @@ public class Main {
 
             r = r + dr[directionNum];
             c = c + dc[directionNum];
-            initLetter++;
+            
+            if (initLetter < (int)'Z') {
+                initLetter++;
+            } else {
+                initLetter = (int)'A';
+            }
+
             matrix[r][c] = initLetter;
         }
 
