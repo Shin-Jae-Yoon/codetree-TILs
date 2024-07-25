@@ -24,12 +24,10 @@ public class Main {
             int sum = 0;
 
             for (int object = 1; object <= n; object++) {
-                sum += (Math.max(target, object) - Math.min(target, object)) * candidate[object - 1];
+                sum += (Math.abs(target - object)) * candidate[object - 1];
             }
 
-            if (min >= sum) {
-                min = sum;
-            }
+            min = Math.min(min, sum);
         }
 
         StringBuilder sb = new StringBuilder();
