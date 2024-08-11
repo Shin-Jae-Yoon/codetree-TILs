@@ -22,39 +22,23 @@ public class Main {
             }
         }
 
-        int firstMax = 0;
-        int targetRow = 0;
-        int targetCol = 0;
+        int max = 0;
 
-        for (int row = 0; row < n; row++) {
-            for (int col = 0; col < n - 2; col++) {
-                if (firstMax <= matrix[row][col] + matrix[row][col + 1] + matrix[row][col + 2]) {
-                    firstMax = matrix[row][col] + matrix[row][col + 1] + matrix[row][col + 2];
-                    targetRow = row;
-                    targetCol = col;
+        for (int firstRow = 0; firstRow < n; firstRow++) {
+            for (int firstCol = 0; firstCol < n - 2; firstCol++) {
+                for (int secondRow = 0; secondRow < n; secondRow++) {
+                    for (int secondCol = 0; secondCol < n - 2; secondCol++) {
+                        if (firstRow == secondRow && Math.abs(firstCol - secondCol) <= 2) {
+                            continue;
+                        }
+
+                        int firstCount = matrix[firstRow][firstCol] + matrix[firstRow][firstCol + 1] + matrix[firstRow][firstCol + 2];
+                        int secondCount = matrix[secondRow][secondCol] + matrix[secondRow][secondCol + 1] + matrix[secondRow][secondCol + 2];
+                        max = Math.max(max, firstCount + secondCount);
+                    }
                 }
             }
         }
-
-        matrix[targetRow][targetCol] = -1;
-        matrix[targetRow][targetCol + 1] = -1;
-        matrix[targetRow][targetCol + 2] = -1;
-
-        int secondMax = 0;
-
-        for (int row = 0; row < n; row++) {
-            for (int col = 0; col < n - 2; col++) {
-                if (matrix[row][col] == -1) {
-                    continue;
-                }
-
-                if (secondMax <= matrix[row][col] + matrix[row][col + 1] + matrix[row][col + 2]) {
-                    secondMax = matrix[row][col] + matrix[row][col + 1] + matrix[row][col + 2];
-                }
-            }
-        }
-
-        int max = firstMax + secondMax;
 
         StringBuilder sb = new StringBuilder();
         sb.append(max);
