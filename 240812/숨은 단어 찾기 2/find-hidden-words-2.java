@@ -37,20 +37,29 @@ public class Main {
                 }
                 
                 for (int direction = 0; direction < DIR_NUM; direction++) {
-                    int nextRow = row + dr[direction];
-                    int nextCol = col + dc[direction];
+                    int current = 1;
+                    int currentRow = row;
+                    int currentCol = col;
+                    
+                    while (true) {
+                        int nextRow = currentRow + dr[direction];
+                        int nextCol = currentCol + dc[direction];
 
-                    if (inRange(nextRow, nextCol) == false) {
-                        continue;
+                        if (inRange(nextRow, nextCol) == false) {
+                            break;
+                        }
+
+                        if (letters[nextRow][nextCol] != 'E') {
+                            break;
+                        }
+
+                        current++;
+                        currentRow = nextRow;
+                        currentCol = nextCol;
                     }
 
-                    if (letters[nextRow][nextCol] == 'E') {
-                        nextRow += dr[direction];
-                        nextCol += dc[direction];
-
-                        if (inRange(nextRow, nextCol) && letters[nextRow][nextCol] == 'E') {
-                            count++;
-                        }
+                    if (current >= 3) {
+                        count++;
                     }
                 }
             }
