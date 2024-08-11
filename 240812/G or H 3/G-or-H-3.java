@@ -23,9 +23,7 @@ public class Main {
 
             if (alphabet == 'G') {
                 x[location] = 1;
-            }
-            
-            if (alphabet == 'H') {
+            } else {
                 x[location] = 2;
             }
 
@@ -34,10 +32,10 @@ public class Main {
 
         int maxScore = 0;
 
-        for (int i = 1; i <= maxValue - k; i++) {
+        for (int i = 1; i <= MAX_LOCATION - k; i++) {
             int sumScore = 0;
 
-            for (int j = i; j < i + k + 1; j++) {
+            for (int j = i; j <= i + k; j++) {
                 sumScore += x[j];
             }
 
