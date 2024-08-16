@@ -29,20 +29,17 @@ public class Main {
         int count = 0;
 
         for (int i = 0; i < n; i++) {
+            if (!map.containsKey(nums[i])) {
+                map.put(nums[i], -1);
+            } else {
+                map.put(nums[i], map.get(nums[i]) - 1);
+            }
+            
             long candidate = k - nums[i];
 
             if (map.containsKey(candidate)) {
                 count += map.get(candidate);
-
-                if (nums[i] == candidate) {
-                    count--;
-                }
-
-                if (map.get(nums[i]) > 0) {
-                    map.put(nums[i], map.get(nums[i]) - 1);
-                }
             }
-
         }
 
         StringBuilder sb = new StringBuilder();
