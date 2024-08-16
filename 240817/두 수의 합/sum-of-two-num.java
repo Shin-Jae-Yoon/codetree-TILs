@@ -31,8 +31,12 @@ public class Main {
         for (int i = 0; i < n; i++) {
             long candidate = k - nums[i];
 
-            if (map.containsKey(candidate) && nums[i] != candidate) {
+            if (map.containsKey(candidate)) {
                 count += map.get(candidate);
+
+                if (nums[i] == candidate) {
+                    count--;
+                }
 
                 if (map.get(nums[i]) > 0) {
                     map.put(nums[i], map.get(nums[i]) - 1);
