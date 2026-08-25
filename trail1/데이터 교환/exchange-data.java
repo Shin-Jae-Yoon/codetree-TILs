@@ -4,13 +4,11 @@ public class Main {
         int b = 6;
         int c = 7;
 
-        int aTemp = a;
-        int bTemp = b;
-        int cTemp = c;
+        int temp = a;
 
-        a = cTemp;
-        b = aTemp;
-        c = bTemp;
+        a = c;
+        c = b;
+        b = temp;
 
         System.out.println(a);
         System.out.println(b);
