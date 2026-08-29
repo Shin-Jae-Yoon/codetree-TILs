@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int aMath = sc.nextInt();
+        int aEng = sc.nextInt();
+        int bMath = sc.nextInt();
+        int bEng = sc.nextInt();
+
+        String result = "";
+
+        if (aMath > bMath) {
+            System.out.println("A");
+            return;
+        }
+
+        if (aMath < bMath) {
+            System.out.println("B");
+            return;
+        }
+
+        if (aEng > bEng) {
+            System.out.println("A");
+        }
+
+        if (aEng < bEng) {
+            System.out.println("B");
+        }
+    }
+}
