@@ -8,8 +8,6 @@ public class Main {
         int bMath = sc.nextInt();
         int bEng = sc.nextInt();
 
-        String result = "";
-
         if (aMath > bMath) {
             System.out.println("A");
             return;
