@@ -6,14 +6,14 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        for (int i = a; i <= b;) {
+        int i = a;
+        while(i <= b) {
             System.out.print(i + " ");
-            
-            if (i % 2 == 1) {
+
+            if(i % 2 == 1)
                 i *= 2;
-            } else {
+            else
                 i += 3;
-            }
         }
     }
 }
