@@ -5,22 +5,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int month = sc.nextInt();
 
-        if (month == 1) {
-            System.out.println(31);
-            return;
-        }
-
         if (month == 2) {
             System.out.println(28);
             return;
         }
 
-        if (month < 8 && month % 2 == 1) {
-            System.out.println(31);
-        } else if (month >= 8 && month % 2 == 0) {
-            System.out.println(31);
+        if (month <= 7) {
+            if (month % 2 == 1) {
+                System.out.println(31);    
+            } else {
+                System.out.println(30);    
+            }
         } else {
-            System.out.println(30);
+            if (month % 2 == 0) {
+                System.out.println(31);    
+            } else {
+                System.out.println(30);    
+            }
         }
     }
 }
