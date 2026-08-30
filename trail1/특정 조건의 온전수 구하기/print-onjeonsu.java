@@ -14,10 +14,6 @@ public class Main {
                 continue;
             }
 
-            if (i % 100 == 5) {
-                continue;
-            }
-
             if (i % 3 == 0 && i % 9 != 0) {
                 continue;
             }
