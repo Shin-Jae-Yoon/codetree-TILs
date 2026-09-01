@@ -6,20 +6,11 @@ public class Main {
         int n = sc.nextInt();
 
         for (int r = 1; r <= n; r++) {
-
-            if (r == 1 || r == n) {
-                for (int c = 1; c <= n; c++) {
+            for (int c = 1; c <= n; c++) {
+                if (r > c || r == 1 || c == n) {
                     System.out.print("* ");
-                }
-            } else {
-                for (int c = 1; c <= n; c++) {
-                    if (c == n) {
-                        System.out.print("* ");
-                    } else if (r <= c) {
-                        System.out.print("  ");
-                    } else {
-                        System.out.print("* ");
-                    }
+                } else {
+                    System.out.print("  ");
                 }
             }
 
