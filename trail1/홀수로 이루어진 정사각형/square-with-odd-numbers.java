@@ -8,15 +8,8 @@ public class Main {
         int b = 11;
 
         for (int i = 1; i <= n; i++) {
-            a = b;
-
             for (int j = 1 ; j<= n; j++) {
-                System.out.print(a + " ");
-                a += 2;
-
-                if (j == 1) {
-                    b = a;
-                }
+                System.out.print((i * 2 + j * 2 + 7) + " ");
             }
 
             System.out.println();
