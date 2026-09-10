@@ -6,18 +6,16 @@ public class Main {
         int[] arr = new int[10 + 1];
         int sum = 0;
         int count = 0;
-        int position = 11;
 
         for (int i = 1; i <= 10; i++) {
             arr[i] = sc.nextInt();
-
-            if (arr[i] >= 250) {
-                position = i;
-                break;
-            }
         }
 
-        for (int i = 1; i < position; i++) {
+        for (int i = 1; i <= 10; i++) {
+            if (arr[i] >= 250) {
+                break;
+            }
+
             sum += arr[i];
             count++;
         }
