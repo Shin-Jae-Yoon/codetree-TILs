@@ -6,12 +6,12 @@ public class Main {
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        long[] arr = new long[101];
-        long minValue = MAX_INT;
+        int[] arr = new int[101];
+        int minValue = MAX_INT;
 
         int N = sc.nextInt();
         for (int i = 1; i <= N; i++) {
-            arr[i] = sc.nextLong();
+            arr[i] = sc.nextInt();
 
             if (arr[i] <= minValue) {
                 minValue = arr[i];
